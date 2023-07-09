@@ -1,6 +1,7 @@
 import Image from "next/image";
+import EmailForm from "./EmailForm";
 
-export default function Home() {
+const Main = () => {
   return (
     <div className="flex flex-col min-h-screen bg-red-100 ">
       {/* <nav className="h-12 bg-black">hi</nav> */}
@@ -12,21 +13,7 @@ export default function Home() {
             Threads-Grower
           </p>
           <div className="bg-red w-[650px] h-[300px] m-auto mb-4">*Graph</div>
-          <div className="flex justify-center gap-2">
-            <p className=" mt-[2px] text-white">
-              Join our email list for{" "}
-              <span className="font-bold">early access</span>:
-            </p>
-            <div>
-              <input
-                className="px-4 py-1 rounded-tl rounded-bl focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
-                placeholder="Email..."
-              />
-              <button className="px-4 py-1 text-white rounded-tr rounded-br bg-red">
-                Join
-              </button>
-            </div>
-          </div>
+          <EmailForm />
         </div>
       </main>
       <footer className="flex items-center h-12 bg-red">
@@ -43,4 +30,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Main;
