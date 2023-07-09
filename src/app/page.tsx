@@ -26,7 +26,18 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="h-12 bg-red"></footer>
+      <footer className="flex items-center h-12 bg-red">
+        <a href="https://www.threads.net/@marat_kotik" target="_blank">
+          <Image
+            height={35}
+            width={35}
+            className="ml-2 cursor-pointer"
+            src="/threads-logo.svg"
+            alt="SVG"
+          />
+        </a>
+        <div className="m-auto mr-2">&copy; 2023</div>
+      </footer>
     </div>
   );
 }
