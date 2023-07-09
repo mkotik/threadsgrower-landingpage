@@ -6,14 +6,17 @@ export default function Home() {
       {/* <nav className="h-12 bg-black">hi</nav> */}
       <main className="flex items-center flex-grow bg-black">
         <div className="m-auto w-fit">
-          <h3 className="text-3xl text-white ">Threads-Grower</h3>
-          <p className="mb-4 text-lg text-white">
+          <h3 className="text-3xl font-extrabold text-white">Threads-Grower</h3>
+          <p className="mb-4 text-lg font-light text-white">
             Boost Your Growth on Threads: Track, Analyze, and Excel with
             Threads-Grower
           </p>
           <div className="bg-red w-[650px] h-[300px] m-auto mb-4">*Graph</div>
-          <div className="m-auto">
-            <p className="text-white">Join our email list for early access:</p>
+          <div className="flex justify-center gap-2">
+            <p className=" mt-[2px] text-white">
+              Join our email list for{" "}
+              <span className="font-bold">early access</span>:
+            </p>
             <div>
               <input
                 className="px-4 py-1 rounded-tl rounded-bl focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
