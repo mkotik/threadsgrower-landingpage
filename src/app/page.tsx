@@ -2,21 +2,31 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <body className="flex flex-col min-h-screen bg-red-100 ">
+    <div className="flex flex-col min-h-screen bg-red-100 ">
       {/* <nav className="h-12 bg-black">hi</nav> */}
-      <main className="flex-grow bg-black">
-        <h3 className="text-white">Threads-Grower</h3>
-        <p className="text-white">
-          Boost Your Growth on Threads: Track, Analyze, and Excel with
-          Threads-Grower
-        </p>
-        <p className="text-white">Join our email list for early access</p>
-        <div>
-          <input className="px-4 py-2" placeholder="email" />
-          <button className="px-4 py-2 text-white bg-red">Join</button>
+      <main className="flex items-center flex-grow bg-black">
+        <div className="m-auto w-fit">
+          <h3 className="text-3xl text-white ">Threads-Grower</h3>
+          <p className="mb-4 text-lg text-white">
+            Boost Your Growth on Threads: Track, Analyze, and Excel with
+            Threads-Grower
+          </p>
+          <div className="bg-red w-[650px] h-[300px] m-auto mb-4">*Graph</div>
+          <div className="m-auto">
+            <p className="text-white">Join our email list for early access:</p>
+            <div>
+              <input
+                className="px-4 py-1 rounded-tl rounded-bl focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
+                placeholder="Email..."
+              />
+              <button className="px-4 py-1 text-white rounded-tr rounded-br bg-red">
+                Join
+              </button>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="h-12 bg-red">bye</footer>
-    </body>
+      <footer className="h-12 bg-red"></footer>
+    </div>
   );
 }
