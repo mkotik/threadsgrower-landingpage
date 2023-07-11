@@ -1,5 +1,6 @@
 import Image from "next/image";
 import EmailForm from "./EmailForm";
+import DemoGraph from "./DemoGraph";
 
 const Main = () => {
   return (
@@ -12,7 +13,7 @@ const Main = () => {
             Boost Your Growth on Threads: Track, Analyze, and Excel with
             Threads-Grower
           </p>
-          <div className="bg-red w-[650px] h-[300px] m-auto mb-4">*Graph</div>
+          <DemoGraph />
           <EmailForm />
         </div>
       </main>
