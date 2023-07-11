@@ -26,7 +26,7 @@ module.exports = {
       silver: "#ecebff",
       "bubble-gum": "#ff77e9",
       bermuda: "#78dcca",
-      red: "#8884d8",
+      purple: "#8884d8",
       white: "#FFFCF9",
       black: "#332E3C",
     },

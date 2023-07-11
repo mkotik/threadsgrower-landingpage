@@ -4,7 +4,7 @@ import DemoGraph from "./DemoGraph";
 
 const Main = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-red-100 ">
+    <div className="flex flex-col min-h-screen bg-purple-100 ">
       {/* <nav className="h-12 bg-black">hi</nav> */}
       <main className="flex items-center flex-grow bg-black">
         <div className="m-auto w-fit">
@@ -17,7 +17,7 @@ const Main = () => {
           <EmailForm />
         </div>
       </main>
-      <footer className="flex items-center h-12 bg-red">
+      <footer className="flex items-center h-12 bg-purple">
         <a href="https://www.threads.net/@marat_kotik" target="_blank">
           <Image
             height={35}
