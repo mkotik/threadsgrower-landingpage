@@ -1,22 +1,41 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
+import SuccessMessage from "./SuccessMessage";
+import ErrorMessage from "./ErrorMessage";
 
 const EmailForm = () => {
   const [email, setEmail] = useState<string>("");
   const [handle, setHandle] = useState<string>("");
-  const handleSubmit = () => {
-    if (!process.env.NEXT_PUBLIC_API_URL) return;
-    if (!email) return;
+  // const [successMessage, setSuccessMessage] = useState<boolean>(true);
+  const [status, setStatus] = useState<string>("");
+  const handleSubmit = async () => {
+    if (!process.env.NEXT_PUBLIC_API_URL) {
+      console.log("API URL NOT FOUND");
+      console.log(process.env.NEXT_PUBLIC_API_URL);
+      return;
+    }
+    if (!email) {
+      console.log("email is undefined");
+      return;
+    }
     axios
       .post(process.env.NEXT_PUBLIC_API_URL, {
         email,
         handle,
       })
       .then((res) => {
+        console.log(res.status);
+        if (res.status === 201) {
+          // setSuccessMessage(true);
+          setStatus("success");
+        } else {
+          setStatus("error");
+        }
         console.log(res);
       })
       .catch((err) => {
+        setStatus("error");
         console.log(err);
       });
   };
@@ -56,6 +75,9 @@ const EmailForm = () => {
         >
           Join
         </button>
+
+        <SuccessMessage status={status} setStatus={setStatus} />
+        <ErrorMessage status={status} setStatus={setStatus} />
       </div>
     </div>
   );

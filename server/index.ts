@@ -29,10 +29,11 @@ server.post("/", async (req: Request, res: Response) => {
       "INSERT INTO earlyAccessSignups (email, handle) VALUES ($1, $2) RETURNING *",
       [email, handle]
     );
-    res.json(newSignup.rows[0]);
-  } catch (error) {
+    res.status(201).json(newSignup.rows[0]);
+  } catch (error: any) {
     console.error(error);
-    res.status(500).send("Server Error");
+    console.log(Object.keys(error));
+    res.status(500).send("Error adding new record");
   }
 });
 
