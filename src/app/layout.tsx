@@ -1,12 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Threads Grower",
   description: "Track, Analyze, and Excel with Threads-Grower",
+  icons: {
+    icon: "/test.png",
+  },
 };
 
 export default function RootLayout({
