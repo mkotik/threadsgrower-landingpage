@@ -1,13 +1,17 @@
 "use client";
 import axios from "axios";
+import { useState } from "react";
 
 const EmailForm = () => {
+  const [email, setEmail] = useState<string>("");
+  const [handle, setHandle] = useState<string>("");
   const handleSubmit = () => {
     if (!process.env.NEXT_PUBLIC_API_URL) return;
+    if (!email) return;
     axios
       .post(process.env.NEXT_PUBLIC_API_URL, {
-        email: "mkotik97@gmail.com",
-        handle: "@marat_kotik",
+        email,
+        handle,
       })
       .then((res) => {
         console.log(res);
@@ -17,17 +21,14 @@ const EmailForm = () => {
       });
   };
 
-  const handleGetSignups = () => {
-    if (!process.env.NEXT_PUBLIC_API_URL) return;
-    axios
-      .get(process.env.NEXT_PUBLIC_API_URL)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.name == "handle") {
+      setHandle(e.target.value);
+    } else if (e.target.name == "email") {
+      setEmail(e.target.value);
+    }
   };
+
   return (
     <div className="flex justify-center gap-2">
       <div className="flex flex-col w-72 ">
@@ -38,10 +39,16 @@ const EmailForm = () => {
         <input
           className="mb-1 px-4 py-1 rounded-tl rounded-tr focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
           placeholder="Threads Handle..."
+          name="handle"
+          onChange={handleChange}
+          value={handle}
         />
         <input
           className="mb-1 px-4 py-1 focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
           placeholder="Email..."
+          name="email"
+          onChange={handleChange}
+          value={email}
         />
         <button
           onClick={() => handleSubmit()}
@@ -49,7 +56,6 @@ const EmailForm = () => {
         >
           Join
         </button>
-        <button onClick={() => handleGetSignups()}>Get all Signups</button>
       </div>
     </div>
   );
