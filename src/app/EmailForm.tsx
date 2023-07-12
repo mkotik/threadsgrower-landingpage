@@ -3,8 +3,9 @@ import axios from "axios";
 
 const EmailForm = () => {
   const handleSubmit = () => {
+    if (!process.env.NEXT_PUBLIC_API_URL) return;
     axios
-      .post("http://localhost:5500", {
+      .post(process.env.NEXT_PUBLIC_API_URL, {
         email: "mkotik97@gmail.com",
         handle: "@marat_kotik",
       })
@@ -17,8 +18,9 @@ const EmailForm = () => {
   };
 
   const handleGetSignups = () => {
+    if (!process.env.NEXT_PUBLIC_API_URL) return;
     axios
-      .get("http://localhost:5500")
+      .get(process.env.NEXT_PUBLIC_API_URL)
       .then((res) => {
         console.log(res);
       })

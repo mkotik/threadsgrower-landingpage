@@ -47,7 +47,7 @@ const data = [
   },
   {
     name: "Jan",
-    Followers: 1705,
+    Followers: 2205,
     pv: 4300,
     amt: 2100,
   },

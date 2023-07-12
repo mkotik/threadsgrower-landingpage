@@ -5,7 +5,6 @@ import DemoGraph from "./DemoGraph";
 const Main = () => {
   return (
     <div className="flex flex-col min-h-screen bg-purple-100 ">
-      {/* <nav className="h-12 bg-black">hi</nav> */}
       <main className="flex items-center flex-grow bg-black">
         <div className="m-auto w-fit">
           <h3 className="text-3xl font-extrabold text-white">Threads-Grower</h3>
