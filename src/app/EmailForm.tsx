@@ -57,11 +57,11 @@ const EmailForm = () => {
           Register for <span className="font-bold">early access</span>:
         </p>
         <div className="flex">
-          <div className="w-10 mb-1 text-right bg-white ">
+          <div className="w-10 mb-1 text-right bg-white rounded-tl ">
             <p className="mt-1 ">@</p>
           </div>
           <input
-            className="w-full mb-1 pr-4 py-1 pl-[1px] focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
+            className="rounded-tr w-full mb-1 pr-4 py-1 pl-[1px] focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
             placeholder="Threads Handle..."
             name="handle"
             onChange={handleChange}
