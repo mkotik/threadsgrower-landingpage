@@ -24,10 +24,10 @@ server.get("/", async (req: Request, res: Response) => {
 
 server.post("/", async (req: Request, res: Response) => {
   try {
-    const { email, handle } = req.body;
+    const { handle } = req.body;
     const newSignup = await pool.query(
-      "INSERT INTO earlyAccessSignups (email, handle) VALUES ($1, $2) RETURNING *",
-      [email, handle]
+      "INSERT INTO earlyAccessSignups ( handle) VALUES ($1, $2) RETURNING *",
+      [handle]
     );
     res.status(201).json(newSignup.rows[0]);
   } catch (error: any) {
