@@ -23,7 +23,6 @@ const EmailForm = () => {
     }
     axios
       .post(process.env.NEXT_PUBLIC_API_URL, {
-        email,
         handle,
       })
       .then((res) => {
