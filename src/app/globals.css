@@ -29,6 +29,10 @@
 .fullHeight {
   height: calc(100vh - 50px);
 }
+
+.top-right-rounded {
+  border-top-right-radius: 0.25rem;
+}
 /* 
 body {
   color: rgb(var(--foreground-rgb));

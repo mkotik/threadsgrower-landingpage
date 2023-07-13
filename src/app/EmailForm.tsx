@@ -61,7 +61,7 @@ const EmailForm = () => {
             <p className="mt-1 ">@</p>
           </div>
           <input
-            className="w-full mb-1 pr-4 py-1 pl-[1px] rounded-tr focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
+            className="w-full mb-1 pr-4 py-1 pl-[1px] top-right-rounded focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
             placeholder="Threads Handle..."
             name="handle"
             onChange={handleChange}
