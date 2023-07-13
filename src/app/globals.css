@@ -18,7 +18,7 @@
 
 .success-alert-hide {
   opacity: 0;
-  transition: all 250ms linear 5s;
+  transition: all 250ms linear 1s;
 }
 
 .success-alert-show {

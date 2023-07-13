@@ -10,13 +10,15 @@ const EmailForm = () => {
   // const [successMessage, setSuccessMessage] = useState<boolean>(true);
   const [status, setStatus] = useState<string>("");
   const handleSubmit = async () => {
+    console.log(status);
     if (!process.env.NEXT_PUBLIC_API_URL) {
       console.log("API URL NOT FOUND");
       console.log(process.env.NEXT_PUBLIC_API_URL);
       return;
     }
-    if (!email) {
-      console.log("email is undefined");
+    if (!handle) {
+      console.log("handle is undefined");
+      setStatus("error");
       return;
     }
     axios
@@ -52,23 +54,27 @@ const EmailForm = () => {
     <div className="flex justify-center gap-2 mt-10">
       <div className="flex flex-col w-72 ">
         <p className="mb-1 text-center text-white">
-          Join the email list for{" "}
-          <span className="font-bold">early access</span>:
+          Register for <span className="font-bold">early access</span>:
         </p>
-        <input
-          className="mb-1 px-4 py-1 rounded-tl rounded-tr focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
-          placeholder="Threads Handle..."
-          name="handle"
-          onChange={handleChange}
-          value={handle}
-        />
-        <input
+        <div className="flex">
+          <div className="w-10 mb-1 text-right bg-white rounded-tl">
+            <p className="mt-1 ">@</p>
+          </div>
+          <input
+            className="w-full mb-1 pr-4 py-1 pl-[1px] rounded-tr focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
+            placeholder="Threads Handle..."
+            name="handle"
+            onChange={handleChange}
+            value={handle}
+          />
+        </div>
+        {/* <input
           className="mb-1 px-4 py-1 focus-visible:outline-none focus-visible:bg-[#f5f5f5]"
           placeholder="Email..."
           name="email"
           onChange={handleChange}
           value={email}
-        />
+        /> */}
         <button
           onClick={() => handleSubmit()}
           className="rounded-br rounded-bl px-4 py-1 text-white  bg-purple hover:bg-[#7c79ba]"

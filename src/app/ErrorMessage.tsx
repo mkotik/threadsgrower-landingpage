@@ -9,7 +9,6 @@ const ErrorMessage: React.FC<SuccessMessageProps> = ({ status, setStatus }) => {
       className={`text-white ${
         status === "error" ? "success-alert-show" : "success-alert-hide"
       }
-          mt-4
            bg-red-500
            flex justify-center items-center
             h-10
@@ -17,6 +16,8 @@ const ErrorMessage: React.FC<SuccessMessageProps> = ({ status, setStatus }) => {
               rounded
               border
                 border-white
+                transform 
+                translate-y-[-40px]
           `}
       onTransitionEnd={() => {
         setStatus("");
