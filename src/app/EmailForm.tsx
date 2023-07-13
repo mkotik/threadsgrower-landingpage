@@ -49,7 +49,7 @@ const EmailForm = () => {
   };
 
   return (
-    <div className="flex justify-center gap-2">
+    <div className="flex justify-center gap-2 mt-10">
       <div className="flex flex-col w-72 ">
         <p className="mb-1 text-center text-white">
           Join the email list for{" "}

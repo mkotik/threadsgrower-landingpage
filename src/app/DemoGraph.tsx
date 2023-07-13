@@ -55,9 +55,9 @@ const data = [
 
 const DemoGraph = () => {
   return (
-    <div className="mb-5">
+    <div className="mb-5 h-[200px] xs:h-[250px] md:h-[300px]">
       <h4 className="text-center text-white opacity-70">Follower Count</h4>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%">
         <AreaChart
           width={650}
           height={300}

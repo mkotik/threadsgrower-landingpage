@@ -7,6 +7,14 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "480px", // Example custom breakpoint for screens smaller than sm
+      // other breakpoints...
+      sm: "640px",
+      md: "768px",
+      lg: "1280px",
+      xl: "1536px",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
