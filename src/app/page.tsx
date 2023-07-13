@@ -1,11 +1,12 @@
 import Image from "next/image";
 import EmailForm from "./EmailForm";
 import DemoGraph from "./DemoGraph";
+import FeaturesPanel from "./FeaturesPanel/FeaturesPanel";
 
 const Main = () => {
   return (
     <div className="flex flex-col min-h-screen bg-purple-100 ">
-      <main className="flex items-center flex-grow bg-black">
+      <main className="flex items-center flex-grow bg-black fullHeight">
         <div className="w-full m-auto md:w-fit px-[10px]">
           <h3 className="text-3xl font-extrabold text-center text-white md:text-left">
             Threads-Grower
@@ -18,7 +19,8 @@ const Main = () => {
           <EmailForm />
         </div>
       </main>
-      <footer className="flex items-center h-12 bg-purple">
+      <FeaturesPanel />
+      <footer className="fixed bottom-0 right-0 flex items-center w-full h-[50px] bg-purple">
         <a href="https://www.threads.net/@marat_kotik" target="_blank">
           <Image
             height={35}

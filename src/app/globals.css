@@ -25,6 +25,10 @@
   opacity: 1;
   transition: all 250ms linear;
 }
+
+.fullHeight {
+  height: calc(100vh - 50px);
+}
 /* 
 body {
   color: rgb(var(--foreground-rgb));
