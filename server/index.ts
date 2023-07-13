@@ -26,7 +26,7 @@ server.post("/", async (req: Request, res: Response) => {
   try {
     const { handle } = req.body;
     const newSignup = await pool.query(
-      "INSERT INTO earlyAccessSignups ( handle) VALUES ($1, $2) RETURNING *",
+      "INSERT INTO earlyAccessSignups (handle) VALUES ($1) RETURNING *",
       [handle]
     );
     res.status(201).json(newSignup.rows[0]);
