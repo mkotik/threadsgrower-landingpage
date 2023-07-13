@@ -18,6 +18,22 @@
   }
 }
 
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 .success-alert-hide {
   opacity: 0;
   transition: all 250ms linear 1s;
