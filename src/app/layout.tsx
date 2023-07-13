@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import * as gtag from "./gtag";
 import { useEffect } from "react";
-import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,16 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
   return (
     <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
