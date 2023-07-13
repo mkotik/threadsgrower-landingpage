@@ -66,6 +66,11 @@ const EmailForm = () => {
             name="handle"
             onChange={handleChange}
             value={handle}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSubmit();
+              }
+            }}
           />
         </div>
         {/* <input
