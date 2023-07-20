@@ -16,6 +16,7 @@ server.get("/", async (req: Request, res: Response) => {
   try {
     const allSignups = await pool.query("SELECT * FROM earlyAccessSignups");
     res.json(allSignups.rows);
+    //test
   } catch (error) {
     console.error(error);
     res.status(500).send("Server Error");
